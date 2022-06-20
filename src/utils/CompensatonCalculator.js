@@ -45,7 +45,7 @@ const compensatonCalculator = (
 
 	if (sickDays < 4) {
 		return {
-			message: 'You need to have more then 3 sick-days to be compensated',
+			errorMessage: 'You need to have more then 3 sick-days to be compensated',
 		};
 	}
 	if (sickDays >= 4) {

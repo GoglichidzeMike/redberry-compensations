@@ -29,8 +29,8 @@ const Calculator = () => {
 		console.log(result);
 
 		// handle input errors here;
-		if (result.message) {
-			return window.alert(result.message);
+		if (result.errorMessage) {
+			return window.alert(result.errorMessage);
 		}
 
 		setTotalCompensation(result.compensation);
