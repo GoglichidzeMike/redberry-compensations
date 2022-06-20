@@ -1,3 +1,9 @@
+const MAX_DAYS_WITHOUT_TUBER = parseFloat(process.env.REACT_APP_MAX_DAYS_WITHOUT_TUBER);
+const MAX_DAYS_WITH_TUBER = parseFloat(process.env.REACT_APP_MAX_DAYS_WITH_TUBER);
+
+const PERCENTAGE =parseFloat( process.env.REACT_APP_COMPENSATION_PERCENTAGE);
+const COMPANY_COMPENSATED_DAYS = parseFloat(process.env.REACT_APP_COMPANY_COMPENATION_DAYS);
+
 /**
  * @return {number} of working days in current month.
  */
@@ -9,7 +15,7 @@ const getCurrentMonthWorkingDays = () => {
 	let result = 0;
 	const currentDate = startDate;
 	while (currentDate <= endDate) {
-		var weekDay = currentDate.getDay();
+		let weekDay = currentDate.getDay();
 		if (weekDay !== 0 && weekDay !== 6) result++;
 
 		currentDate.setDate(currentDate.getDate() + 1);
@@ -23,9 +29,9 @@ const getCurrentMonthWorkingDays = () => {
 
 const calculateCompensatedDays = (sickDays, isTubercolosis) => {
 	if (isTubercolosis) {
-		if (sickDays - 3 > 240) return 240;
+		if (sickDays - 3 > MAX_DAYS_WITH_TUBER) return MAX_DAYS_WITH_TUBER;
 	} else {
-		if (sickDays - 3 > 180) return 180;
+		if (sickDays - 3 > MAX_DAYS_WITHOUT_TUBER) return MAX_DAYS_WITHOUT_TUBER;
 	}
 	return sickDays - 3;
 };
@@ -53,9 +59,12 @@ const compensatonCalculator = (
 		};
 	}
 	const averageDailYIncome = monthlyIncome / getCurrentMonthWorkingDays();
-	const dailyCompenation = averageDailYIncome * 0.7;
+	const dailyCompenation = averageDailYIncome * PERCENTAGE;
 	const compensatedDays = calculateCompensatedDays(sickDays, isTubercolosis);
-	const companyCompensatedDays = compensatedDays > 5 ? 5 : compensatedDays;
+	const companyCompensatedDays =
+		compensatedDays > COMPANY_COMPENSATED_DAYS
+			? COMPANY_COMPENSATED_DAYS
+			: compensatedDays;
 	const insuranceCompensatedDays = compensatedDays - companyCompensatedDays;
 
 	if (sickDays >= 4) {
@@ -74,5 +83,4 @@ const compensatonCalculator = (
 	}
 };
 
-// console.log(compensatonCalculator(1500, 28, false));
 export default compensatonCalculator;
