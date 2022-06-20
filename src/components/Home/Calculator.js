@@ -14,17 +14,31 @@ const Calculator = () => {
 	//
 	const [compensatedDays, setCompensatedDays] = useState(0);
 	const [totalCompensation, setTotalCompensation] = useState(0);
+	const [companyCompensation, setCompanyCompensation] = useState(0);
+	const [companyCompensatedDays, setCompanyCompensatedDays] = useState(0);
+	const [insuranceCompensation, setInsuranceCompensation] = useState(0);
+	const [insuranceCompensatedDays, setInsuranceCompensatedDays] = useState(0);
 
 	const handleCalculations = (e) => {
-		console.log(isTuberColosis);
+		// get calculations form utility function
 		const result = compensatonCalculator(
 			averageIncome,
 			sickLeaveDays,
 			isTuberColosis
 		);
+		console.log(result);
+
+		// handle input errors here;
+		if (result.message) {
+			return window.alert(result.message);
+		}
 
 		setTotalCompensation(result.compensation);
 		setCompensatedDays(result.compensatedDays);
+		setCompanyCompensation(result.companyCompensation);
+		setCompanyCompensatedDays(result.companyCompensatedDays);
+		setInsuranceCompensatedDays(result.insuranceCompensatedDays);
+		setInsuranceCompensation(result.insuranceCompensation);
 	};
 	return (
 		<div className='max-w-xs py-20 bg-white main-section-right calculator text-metal-dark my-10 lg:my-0'>
@@ -55,12 +69,12 @@ const Calculator = () => {
 			<div className='flex p-5 my-5 info border-y border-y-metal-light leading-3-5'>
 				<Calculations
 					isEmployer
-					totalDays={compensatedDays}
-					totalCompensation={totalCompensation}
+					totalDays={companyCompensatedDays}
+					totalCompensation={companyCompensation}
 				/>
 				<Calculations
-					totalDays={compensatedDays}
-					totalCompensation={totalCompensation}
+					totalDays={insuranceCompensatedDays}
+					totalCompensation={insuranceCompensation}
 				/>
 			</div>
 			<TotalCalculations

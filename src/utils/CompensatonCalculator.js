@@ -1,6 +1,4 @@
 /**
- * Returns number of working days in current month.
- *
  * @return {number} of working days in current month.
  */
 const getCurrentMonthWorkingDays = () => {
@@ -19,6 +17,10 @@ const getCurrentMonthWorkingDays = () => {
 	return result;
 };
 
+/**
+ * @return {number} of sick days based on tubercolosis.
+ */
+
 const calculateCompensatedDays = (sickDays, isTubercolosis) => {
 	if (isTubercolosis) {
 		if (sickDays - 3 > 240) return 240;
@@ -35,24 +37,29 @@ const compensatonCalculator = (
 ) => {
 	const averageDailYIncome = monthlyIncome / getCurrentMonthWorkingDays();
 	const dailyCompenation = averageDailYIncome * 0.7;
+
 	const compensatedDays = calculateCompensatedDays(sickDays, isTubercolosis);
-	console.log(compensatedDays, 'cp');
+	const companyCompensatedDays = compensatedDays > 5 ? 5 : compensatedDays;
+	const insuranceCompensatedDays = compensatedDays - companyCompensatedDays;
+	console.log({ companyCompensatedDays, insuranceCompensatedDays });
 
 	if (sickDays < 4) {
-		console.log('You need tohave more then 4 days to be compensated');
-		return;
+		return {
+			message: 'You need to have more then 3 sick-days to be compensated',
+		};
 	}
-	if (sickDays >= 4 && sickDays <= 8) {
+	if (sickDays >= 4) {
 		const compensation = dailyCompenation * compensatedDays;
-		console.log(`your compensation is ${compensation.toFixed(2)}`);
-		console.log(`you are compensated for ${compensatedDays} days`);
-		return { compensation, compensatedDays };
-	}
-	if (sickDays > 8) {
-		const compensation = dailyCompenation * compensatedDays;
-		console.log(`your compensation is ${compensation.toFixed(2)}`);
-		console.log(`you are compensated for ${compensatedDays} days`);
-		return { compensation, compensatedDays };
+		const companyCompensation = dailyCompenation * companyCompensatedDays;
+		const insuranceCompensation = dailyCompenation * insuranceCompensatedDays;
+		return {
+			compensation,
+			compensatedDays,
+			companyCompensation,
+			insuranceCompensation,
+			insuranceCompensatedDays,
+			companyCompensatedDays,
+		};
 	}
 };
 
