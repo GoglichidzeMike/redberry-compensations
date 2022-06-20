@@ -48,6 +48,18 @@ const compensatonCalculator = (
 			errorMessage: 'You need to have more then 3 sick-days to be compensated',
 		};
 	}
+	if (isNaN(sickDays) || isNaN(monthlyIncome)) {
+		return {
+			errorMessage: 'Both sick days and monthly income have to be numbers',
+		};
+	}
+
+	if (typeof isTubercolosis == 'boolean') {
+		return {
+			errorMessage: 'isTubercolosis has to be a boolean',
+		};
+	}
+
 	if (sickDays >= 4) {
 		const compensation = dailyCompenation * compensatedDays;
 		const companyCompensation = dailyCompenation * companyCompensatedDays;
@@ -62,7 +74,5 @@ const compensatonCalculator = (
 		};
 	}
 };
-
-// compensatonCalculator(1500, 183, false);
 
 export default compensatonCalculator;
