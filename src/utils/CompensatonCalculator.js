@@ -30,8 +30,6 @@ const calculateCompensatedDays = (sickDays, isTubercolosis) => {
 	return sickDays - 3;
 };
 
-const checkForErrors = (monthlyIncome, sickDays, isTubercolosis) => {};
-
 const compensatonCalculator = (
 	monthlyIncome = 0,
 	sickDays = 0,
@@ -43,13 +41,13 @@ const compensatonCalculator = (
 		};
 	}
 
-	if (isNaN(sickDays) || isNaN(monthlyIncome)) {
+	if (typeof sickDays != 'number' || typeof monthlyIncome != 'number') {
 		return {
 			errorMessage: 'Both sick days and monthly income have to be numbers',
 		};
 	}
 
-	if (typeof isTubercolosis == 'boolean') {
+	if (typeof isTubercolosis != 'boolean') {
 		return {
 			errorMessage: 'isTubercolosis has to be a boolean',
 		};

@@ -10,16 +10,23 @@ const Calculations = (props) => {
 
 	return (
 		<div className='employer text-center'>
-			<p className='text-sm'>{handleCompensator()}</p>
-			<p className='font-bold text-sm'>{totalDays} days</p>
-			<p className='mt-2-5 font-bold text-lg leading-5'>
+			<p className='text-sm' id='calculations-title'>
+				{handleCompensator()}
+			</p>
+			<p className='font-bold text-sm' id='calculations-totaldays'>
+				{totalDays} days
+			</p>
+			<p
+				className='mt-2-5 font-bold text-lg leading-5'
+				id='calculations-totalCompensation'
+			>
 				{totalCompensation
 					? (Math.round(100 * totalCompensation) / 100).toFixed(2)
 					: 0}{' '}
 				&euro;
 			</p>
 			<p className='text-metal-middle text-xs'>Daily allowance</p>
-			<p className='text-metal-middle text-xs'>
+			<p className='text-metal-middle text-xs' id='calculations-daily'>
 				{totalDays
 					? (Math.round(100 * (totalCompensation / totalDays)) / 100).toFixed(2)
 					: 0}
