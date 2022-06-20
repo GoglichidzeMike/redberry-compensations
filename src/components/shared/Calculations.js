@@ -10,10 +10,10 @@ const Calculations = (props) => {
 
 	return (
 		<div className='employer text-center'>
-			<p className='text-sm' id='calculations-title'>
+			<p className='text-sm leading-3-2' id='calculations-title'>
 				{handleCompensator()}
 			</p>
-			<p className='font-bold text-sm' id='calculations-totaldays'>
+			<p className='font-bold text-sm leading-3-2' id='calculations-totaldays'>
 				{totalDays} days
 			</p>
 			<p

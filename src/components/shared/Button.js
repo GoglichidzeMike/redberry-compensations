@@ -7,7 +7,7 @@ const Button = (props) => {
 			className='px-10 py-5 font-bold text-white red-gradient rounded-4xl calculate-btn'
 			onClick={handleCalculations}
 		>
-			<span className=''>{label}</span>
+			<span className='leading-5'>{label}</span>
 		</button>
 	);
 };

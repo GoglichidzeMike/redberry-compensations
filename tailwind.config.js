@@ -32,6 +32,7 @@ module.exports = {
 				'4xl': '30px',
 			},
 			lineHeight: {
+				'3-2': '14px',
 				'3-5': '15px',
 				'7-5': '30px',
 				'8-5': '35px',

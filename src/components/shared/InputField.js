@@ -11,6 +11,7 @@ const InputField = (props) => {
 			<div className='flex w-full border-2 rounded shadow border-metal-light'>
 				<input
 					type='number'
+					onInput={(e) => (e.target.value = e.target.value.slice(0, 7))}
 					name={name}
 					className='focus:outline-none w-full font-medium text-lg px-2-5'
 					placeholder='0'
