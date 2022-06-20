@@ -21,6 +21,7 @@ const Calculator = () => {
 
 	const handleCalculations = (e) => {
 		// get calculations form utility function
+		console.log({ averageIncome, sickLeaveDays, isTuberColosis });
 		const result = compensatonCalculator(
 			averageIncome,
 			sickLeaveDays,

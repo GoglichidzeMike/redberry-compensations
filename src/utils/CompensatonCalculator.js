@@ -74,4 +74,5 @@ const compensatonCalculator = (
 	}
 };
 
+// console.log(compensatonCalculator(1500, 28, false));
 export default compensatonCalculator;

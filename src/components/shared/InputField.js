@@ -15,7 +15,7 @@ const InputField = (props) => {
 					className='focus:outline-none w-full font-medium text-lg px-2-5'
 					placeholder='0'
 					onChange={(e) => {
-						handleInputChange(e.target.value);
+						handleInputChange(parseFloat(e.target.value));
 					}}
 				/>
 				<div className='m-2-5 font-bold text-lg'>{type}</div>
