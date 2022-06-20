@@ -30,24 +30,19 @@ const calculateCompensatedDays = (sickDays, isTubercolosis) => {
 	return sickDays - 3;
 };
 
+const checkForErrors = (monthlyIncome, sickDays, isTubercolosis) => {};
+
 const compensatonCalculator = (
 	monthlyIncome = 0,
 	sickDays = 0,
 	isTubercolosis = false
 ) => {
-	const averageDailYIncome = monthlyIncome / getCurrentMonthWorkingDays();
-	const dailyCompenation = averageDailYIncome * 0.7;
-
-	const compensatedDays = calculateCompensatedDays(sickDays, isTubercolosis);
-	const companyCompensatedDays = compensatedDays > 5 ? 5 : compensatedDays;
-	const insuranceCompensatedDays = compensatedDays - companyCompensatedDays;
-	console.log({ companyCompensatedDays, insuranceCompensatedDays });
-
 	if (sickDays < 4) {
 		return {
 			errorMessage: 'You need to have more then 3 sick-days to be compensated',
 		};
 	}
+
 	if (isNaN(sickDays) || isNaN(monthlyIncome)) {
 		return {
 			errorMessage: 'Both sick days and monthly income have to be numbers',
@@ -59,11 +54,17 @@ const compensatonCalculator = (
 			errorMessage: 'isTubercolosis has to be a boolean',
 		};
 	}
+	const averageDailYIncome = monthlyIncome / getCurrentMonthWorkingDays();
+	const dailyCompenation = averageDailYIncome * 0.7;
+	const compensatedDays = calculateCompensatedDays(sickDays, isTubercolosis);
+	const companyCompensatedDays = compensatedDays > 5 ? 5 : compensatedDays;
+	const insuranceCompensatedDays = compensatedDays - companyCompensatedDays;
 
 	if (sickDays >= 4) {
 		const compensation = dailyCompenation * compensatedDays;
 		const companyCompensation = dailyCompenation * companyCompensatedDays;
 		const insuranceCompensation = dailyCompenation * insuranceCompensatedDays;
+
 		return {
 			compensation,
 			compensatedDays,
