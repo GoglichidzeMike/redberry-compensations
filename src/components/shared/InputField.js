@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types'; // ES6
 
+
+const symbolsArr = ["e", "E", "+", "-", "."];
+
 const InputField = (props) => {
 	const { label, name, type, handleInputChange } = props;
 
@@ -15,6 +18,7 @@ const InputField = (props) => {
 					name={name}
 					className='focus:outline-none w-full font-medium text-lg px-2-5'
 					placeholder='0'
+					onKeyDown={(e) => symbolsArr.includes(e.key) && e.preventDefault()}
 					onChange={(e) => {
 						handleInputChange(parseFloat(e.target.value));
 					}}

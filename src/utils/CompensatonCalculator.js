@@ -41,6 +41,11 @@ const compensatonCalculator = (
 	sickDays = 0,
 	isTubercolosis = false
 ) => {
+	if (sickDays < 0 || monthlyIncome < 0) {
+		return {
+			errorMessage: 'Inputs have to be positive integers.',
+		};
+	}
 	if (sickDays < 4) {
 		return {
 			errorMessage: 'You need to have more then 3 sick-days to be compensated',
