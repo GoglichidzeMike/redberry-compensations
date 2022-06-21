@@ -6,6 +6,9 @@ Styling was done by **TailWind CSS**.
 
 Testing was done by **JEST** and **React Testing Library**.
 
+To see more by me, please check out my Github or visit
+[my website](https://goglichidze.me/).
+
 ## Available Scripts
 
 In the project directory, you can respectfully run to start, test and build
