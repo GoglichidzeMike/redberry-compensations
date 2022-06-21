@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# My task busmissionf or RedBerry
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with **Create React App**.
+
+Styling was done by **TailWind CSS**.
+
+Testing was done by **JEST** and **React Testing Library**.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can respectfully run to start, test and build
+application:
 
-### `npm start`
+```console
+Mike@RedBerry:~$ npm start
+Mike@RedBerry:~$ npm test
+Mike@RedBerry:~$ npm run build
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Task Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Complete the test with tools of your choice. Internet and other assisting
+  tools (except help from a friend) are allowed.
+- UI toolkits (Bootstrap etc.) are allowed.
+- JS frameworks (React, Vue & Angular) are allowed.
+- The HTML should be semantic and the web page must be responsive. ●The final
+  result must look like the design we provided.
+- Please add the time it took you to finish the task.
+- Send the task back as a .zip file or upload it to GitHub and send us a link.
 
-### `npm test`
+### TASK
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Backstory** Your employer pays the compensation from the 4th to the 8th day of
+sick-leave. The Estonian Health Insurance Fund pays from the 9th day. The
+compensation rate is 70% of your monthly gross income.
 
-### `npm run build`
+The maximum duration of one insurance event is 182 days, unless it’s
+tuberculosis. For tuberculosis it is up to 240 days.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Story**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As a user, I want to calculate my sick-leave health insurance compensation so
+that I can double check my compensation sum.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Acceptance criteria**
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- I can enter my monthly gross income
+- I can enter my total days of sick-leave
+- I can specify that I have tubercolosis
+- I can see how much will my employer compensate me
+- I can see how many days my employer has to compensate
+- I can see how much will Health Insurance compensate me
+- I can see how many days Health Insurance has to compensate
+- I can see how much my compensation total will be **Design** Tip: Log in to
+  inspect the design
+  https://www.figma.com/file/omBWDymWe3AXMNz9BTyLeZ/Front-End?node-id=1%3A2
