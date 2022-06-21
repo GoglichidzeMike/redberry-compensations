@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'; // ES6
 const symbolsArr = ["e", "E", "+", "-", "."];
 
 const InputField = (props) => {
-	const { label, name, type, handleInputChange } = props;
+	const { label = '', name = '', type = '', handleInputChange } = props;
 
 	return (
 		<div className='mb-5'>

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'; // ES6
 
 const TotalCalculations = (props) => {
-	const { totalDays = 0, totalCompensation } = props;
+	const { totalDays = 0, totalCompensation = 0 } = props;
 
 	return (
 		<div className='compensation text-center'>

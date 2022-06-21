@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'; // ES6
 
 const Calculations = (props) => {
-	const { isEmployer, totalDays = 0, totalCompensation } = props;
+	const { isEmployer = false , totalDays = 0, totalCompensation = 0 } = props;
 
 	const handleCompensator = () => {
 		if (isEmployer) return 'The employer compensates';

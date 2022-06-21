@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'; // ES6
 
 const CheckboxInput = (props) => {
-	const { label, name, handleInputChange, value } = props;
+	const { label = '', name = '', handleInputChange, value = 0 } = props;
 	return (
 		<div className='flex items-center checkbox-input mb-5'>
 			<input
