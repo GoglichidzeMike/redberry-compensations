@@ -1,4 +1,4 @@
-# My task busmissionf or RedBerry
+# My task busmission for RedBerry
 
 This project was bootstrapped with **Create React App**.
 
